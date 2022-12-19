@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Controller
@@ -41,14 +42,14 @@ public class FlashSaleActivityController {
     ) throws ParseException {
         startTime = startTime.substring(0, 10) + startTime.substring(11);
         endTime = endTime.substring(0, 10) + endTime.substring(11);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-ddhh:mm");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-ddhh:mm", Locale.getDefault(Locale.Category.FORMAT));
         FlashSaleActivity flashSaleActivity = new FlashSaleActivity();
         flashSaleActivity.setName(name);
         flashSaleActivity.setCommodityId(commodityId);
         flashSaleActivity.setFlashSalePrice(flashSalePrice);
         flashSaleActivity.setOldPrice(oldPrice);
         flashSaleActivity.setTotalStock(flashSaleNumber);
-        flashSaleActivity.setAvailableStock(new Integer("" + flashSaleNumber));
+        flashSaleActivity.setAvailableStock((int) flashSaleNumber);
         flashSaleActivity.setLockStock(0L);
         flashSaleActivity.setActivityStatus(1);
         flashSaleActivity.setStartTime(format.parse(startTime));
@@ -63,7 +64,7 @@ public class FlashSaleActivityController {
     public String activityList(Map<String, Object> resultMap) {
         List<FlashSaleActivity> flashSaleActivities = flashSaleActivityDao.queryFlashSaleActivitysByStatus(1);
         resultMap.put("flashSaleActivities", flashSaleActivities);
-        return "flashsale_activity";
+        return "flash_sale_activity";
     }
 
     @GetMapping("/item/{flashSaleActivityId}")
@@ -82,6 +83,6 @@ public class FlashSaleActivityController {
         resultMap.put("commodityName", flashSaleCommodity.getCommodityName());
         resultMap.put("commodityDesc", flashSaleCommodity.getCommodityDesc());
 
-        return "flashsale_item";
+        return "flash_sale_item";
     }
 }
