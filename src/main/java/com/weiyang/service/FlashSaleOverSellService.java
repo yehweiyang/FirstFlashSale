@@ -1,7 +1,7 @@
 package com.weiyang.service;
 
 import com.weiyang.db.po.FlashSaleActivity;
-import com.weiyang.db.po.mappers.dao.FlashSaleActivityDao;
+import com.weiyang.db.dao.FlashSaleActivityDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

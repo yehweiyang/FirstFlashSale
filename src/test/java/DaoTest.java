@@ -1,14 +1,13 @@
 import com.weiyang.FirstFlashSaleApplication;
 import com.weiyang.db.mappers.FlashSaleActivityMapper;
 import com.weiyang.db.po.FlashSaleActivity;
-import com.weiyang.db.po.mappers.dao.FlashSaleActivityDao;
+import com.weiyang.db.dao.FlashSaleActivityDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
-import java.util.List;
 
 @SpringBootTest(classes = FirstFlashSaleApplication.class)
 public class DaoTest {
@@ -33,12 +32,12 @@ public class DaoTest {
                 flashSaleActivityMapper.selectByPrimaryKey(1L));
     }
 
-    @Test
-    void setFlashSaleActivityQuery() {
-        List<FlashSaleActivity> flashSaleActivitys =
-                flashSaleActivityDao.queryFlashSaleActivitysByStatus(0);
-        System.out.println(flashSaleActivitys.size());
-        flashSaleActivitys.forEach(flashSaleActivity ->
-                System.out.println(flashSaleActivity.toString()));
-    }
+//    @Test
+//    void setFlashSaleActivityQuery() {
+//        List<FlashSaleActivity> flashSaleActivitys =
+//                flashSaleActivityDao.queryFlashSaleActivitysByStatus(0);
+//        System.out.println(flashSaleActivitys.size());
+//        flashSaleActivitys.forEach(flashSaleActivity ->
+//                System.out.println(flashSaleActivity.toString()));
+//    }
 }

@@ -1,4 +1,4 @@
-package com.weiyang.db.po.mappers.dao;
+package com.weiyang.db.dao;
 
 import com.weiyang.db.mappers.FlashSaleCommodityMapper;
 import com.weiyang.db.po.FlashSaleCommodity;

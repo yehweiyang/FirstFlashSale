@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>秒殺結果頁</title>
+    <link rel="stylesheet" type="text/css" href="/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/pages-getOrderInfo.css"/>
+</head>
+
+<body>
+<!--head-->
+<!-- 頭部欄位 -->
+<!--頁面頂部-->
+<div id="nav-bottom">
+    <!--頂部-->
+    <div class="nav-top">
+        <div class="top">
+            <div class="py-container">
+                <div class="shortcut">
+                    <ul class="fl">
+                        <li class="f-item"></li>
+                        <li class="f-item">請<a href="login.html" target="_blank">登錄</a>　<span><a href="register.html"
+                                                                                                    target="_blank">免費註冊</a></span>
+                        </li>
+                    </ul>
+                    <div class="fr typelist">
+                        <ul class="types">
+                            <li class="f-item"><span>我的訂單</span></li>
+
+                            <li class="f-item"><span><a href="cart.html" target="_blank">我的購物車</a></span></li>
+                            <li class="f-item"><span>企業採購</span></li>
+                            <li class="f-item"><span><a href="cooperation.html" target="_blank">合作招商</a></span></li>
+                            <li class="f-item"><span><a href="shoplogin.html" target="_blank">商家後臺</a></span></li>
+                            <li class="f-item"><span>網站導航</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--頭部-->
+        <div class="header">
+            <div class="py-container">
+                <div class="yui3-g Logo">
+                    <div class="yui3-u Left logoArea">
+                        <a class="logo-bd" title="青橙" href="index.html" target="_blank"></a>
+                    </div>
+                    <div class="yui3-u Rit searchArea">
+                        <div class="search">
+                            <form action="" class="sui-form form-inline">
+                                <!--searchAutoComplete-->
+                                <div class="input-append">
+                                    <input type="text" id="autocomplete" class="input-error input-xxlarge"/>
+                                    <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="cart py-container" id="cart">
+    <!--主內容-->
+    <div class="checkout py-container">
+        <div class="checkout-tit">
+            <h4 class="tit-txt">秒殺結果</h4>
+        </div>
+        <div class="checkout-steps">
+            <div class="hr"></div>
+            <!--支付和送貨-->
+            <div class="payshipInfo">
+                <div class="hr"></div>
+                <div class="step-cont">
+                    <ul class="send-detail">
+                        <li>
+                            <div class="sendGoods">
+                                <em th:text="${resultInfo}"></em>
+                            </div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="submit">
+        <a class="sui-btn btn-danger btn-xlarge" th:href="@{'/flashsale/orderQuery/'+ ${orderNo}}"
+           target='_blank'>查看訂單資訊</a>
+    </div>
+</div>
+<!-- 底部欄位 -->
+<!--頁面底部-->
+<div class="clearfix footer">
+    <div class="py-container">
+        <div class="footlink">
+            <div class="Mod-service">
+                <ul class="Mod-Service-list">
+                    <li class="grid-service-item intro  intro1">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供發票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro2">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供發票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro  intro3">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供發票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item  intro intro4">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供發票</p>
+                        </div>
+
+                    </li>
+                    <li class="grid-service-item intro intro5">
+
+                        <i class="serivce-item fl"></i>
+                        <div class="service-text">
+                            <h4>正品保障</h4>
+                            <p>正品保障，提供發票</p>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix Mod-list">
+                <div class="yui3-g">
+                    <div class="yui3-u-1-6">
+                        <h4>購物指南</h4>
+                        <ul class="unstyled">
+                            <li>購物流程</li>
+                            <li>會員介紹</li>
+                            <li>生活旅行/團購</li>
+                            <li>常見問題</li>
+                            <li>購物指南</li>
+                        </ul>
+
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>配送方式</h4>
+                        <ul class="unstyled">
+                            <li>上門自提</li>
+                            <li>211限時達</li>
+                            <li>配送服務查詢</li>
+                            <li>配送費收取標準</li>
+                            <li>海外配送</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>支付方式</h4>
+                        <ul class="unstyled">
+                            <li>貨到付款</li>
+                            <li>線上支付</li>
+                            <li>分期付款</li>
+                            <li>郵局匯款</li>
+                            <li>公司轉帳</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>售後服務</h4>
+                        <ul class="unstyled">
+                            <li>售後政策</li>
+                            <li>價格保護</li>
+                            <li>退款說明</li>
+                            <li>返修/退換貨</li>
+                            <li>取消訂單</li>
+                        </ul>
+                    </div>
+                    <div class="yui3-u-1-6">
+                        <h4>特色服務</h4>
+                        <ul class="unstyled">
+                            <li>奪寶島</li>
+                            <li>DIY裝機</li>
+                            <li>延保服務</li>
+                            <li>品優購E卡</li>
+                            <li>品優購通信</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--頁面底部END-->
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+
+<script src="/js/vue.js"></script>
+<script src="/js/axios.js"></script>
+</body>
+</html>
+

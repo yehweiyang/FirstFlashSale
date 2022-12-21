@@ -18,4 +18,8 @@ public interface FlashSaleActivityMapper {
     int updateByPrimaryKey(FlashSaleActivity record);
 
     List<FlashSaleActivity> queryFlashSaleActivitysByStatus(int activityStatus);
+
+    int lockStock(Long flashSaleActivityId);
+
+    int deductStock(Long flashSaleActivityId);
 }

@@ -1,7 +1,7 @@
 package com.weiyang.component;
 
 import com.weiyang.db.po.FlashSaleActivity;
-import com.weiyang.db.po.mappers.dao.FlashSaleActivityDao;
+import com.weiyang.db.dao.FlashSaleActivityDao;
 import com.weiyang.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;

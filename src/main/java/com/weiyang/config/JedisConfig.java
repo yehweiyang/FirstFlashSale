@@ -42,4 +42,5 @@ public class JedisConfig extends CachingConfigurerSupport {
         return jedisPool;
     }
 
+
 }

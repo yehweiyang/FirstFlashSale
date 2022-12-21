@@ -1,12 +1,14 @@
-package com.weiyang.db.po.mappers.dao;
+package com.weiyang.db.dao;
 
 import com.weiyang.db.mappers.FlashSaleActivityMapper;
 import com.weiyang.db.po.FlashSaleActivity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class FlashSaleActivityDaoImpl implements FlashSaleActivityDao {
 
@@ -32,4 +34,28 @@ public class FlashSaleActivityDaoImpl implements FlashSaleActivityDao {
     public void updateFlashSaleActivity(FlashSaleActivity flashSaleActivity) {
         flashSaleActivityMapper.updateByPrimaryKey(flashSaleActivity);
     }
+
+    @Override
+    public boolean lockStock(Long flashSaleActivityId) {
+        int result = flashSaleActivityMapper.lockStock(flashSaleActivityId);
+        if (result < 1) {
+            log.error("鎖定庫存失敗");
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean deductStock(Long flashSaleActivityId) {
+        int result = flashSaleActivityMapper.deductStock(flashSaleActivityId);
+        if (result < 1) {
+            log.error("扣減庫存失敗");
+            return false;
+        }
+        return true;
+    }
+
+
+
+
 }
