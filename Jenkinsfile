@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3'  // 跟你剛剛設定的名稱要一致
+        jdk 'JDK 17'      // ← 這名字跟你剛剛 Global Tool 裡填的一樣
+        maven 'Maven 3'   // ← 如果你用了 Jenkins 自動裝 Maven
     }
 
     stages {
